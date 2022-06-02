@@ -181,13 +181,16 @@ class Home extends Component {
 
     console.log("buttonStop", buttonStop);
     return (
-      <div className="container mx-auto mt-20 py-4 md:py-8 text-center">
+      <div className="container mx-auto mt-20 py-4 md:py-8 text-center bg-gradient-to-br from-red-300 via-red-300 to-red-400">
         {dataCar.length > 0 && dataDriver.length > 0 ? (
           <>
-            <div className="text-2xl font-bold mb-8">TES KOSME</div>
+            <div className="text-2xl font-bold mb-8 text-white">TES KOSME</div>
             <div className="relative">
+              <div className="text-sm font-bold mb-1 mr-28 ml-4 text-white">
+                Kendaraan
+              </div>
               <div
-                className="rounded-lg cursor-pointer border w-44 justify-between text-gray-600 bg-white hover:bg-gray-100 hover:border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium text-sm px-4 py-2.5 text-center inline-flex items-center"
+                className="rounded-lg cursor-pointer border w-44 justify-between text-white bg-gradient-to-r from-red-300 via-red-300 to-red-400 hover:bg-red-100 hover:border-red-200 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium text-sm px-4 py-2.5 text-center inline-flex items-center"
                 onClick={() => {
                   if (dataCar.length > 0) {
                     this.setState({
@@ -210,7 +213,7 @@ class Home extends Component {
                   className=" cursor-pointer z-10 w-44  divide-y divide-gray-100 shadow absolute top-full bottom-0 left-1/2"
                   style={{ transform: "translate(-50%, -50%)" }}
                 >
-                  <ul className="py-1 text-sm text-gray-600 bg-white border rounded-b-lg">
+                  <ul className="py-1 text-sm text-white bg-gradient-to-r from-red-300 via-red-300 to-red-400 border rounded-b-lg">
                     {dataCar.map((val, index) => (
                       <li
                         key={index}
@@ -228,8 +231,11 @@ class Home extends Component {
               )}
             </div>
             <div className="relative my-4">
+              <div className="text-sm font-bold mb-1 mr-28 ml-4 text-white">
+                Plat Nomor
+              </div>
               <div
-                className="rounded-lg cursor-pointer border w-44 justify-between text-gray-600 bg-white hover:bg-gray-100 hover:border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium text-sm px-4 py-2.5 text-center inline-flex items-center"
+                className="rounded-lg cursor-pointer border w-44 justify-between text-white bg-gradient-to-r from-red-300 via-red-300 to-red-400 hover:bg-red-100 hover:border-red-200 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium text-sm px-4 py-2.5 text-center inline-flex items-center"
                 onClick={() => {
                   if (dataPlat.length > 0) {
                     this.setState({
@@ -252,7 +258,7 @@ class Home extends Component {
                   className=" cursor-pointer z-10 w-44  divide-y divide-gray-100 shadow absolute top-full bottom-0 left-1/2"
                   style={{ transform: "translate(-50%, -50%)" }}
                 >
-                  <ul className="py-1 text-sm text-gray-600 bg-white border rounded-b-lg">
+                  <ul className="py-1 text-sm text-white bg-gradient-to-r from-red-300 via-red-300 to-red-400 border rounded-b-lg">
                     {dataPlat.map((val, index) => (
                       <li
                         key={index}
@@ -270,8 +276,11 @@ class Home extends Component {
               )}
             </div>
             <div className="relative">
+              <div className="text-sm font-bold mb-1 mr-28 text-white">
+                Driver
+              </div>
               <div
-                className="rounded-lg cursor-pointer border w-44 justify-between text-gray-600 bg-white hover:bg-gray-100 hover:border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium text-sm px-4 py-2.5 text-center inline-flex items-center"
+                className="rounded-lg cursor-pointer border w-44 justify-between text-white bg-gradient-to-r from-red-300 via-red-300 to-red-400 hover:bg-red-100 hover:border-red-200 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium text-sm px-4 py-2.5 text-center inline-flex items-center"
                 onClick={() => {
                   if (dataDriver.length > 0) {
                     this.setState({
@@ -294,7 +303,7 @@ class Home extends Component {
                   className=" cursor-pointer z-10 w-44 divide-y divide-gray-100 shadow absolute  top-full bottom-0 left-1/2"
                   style={{ transform: "translate(-50%, -50%)" }}
                 >
-                  <ul className="py-1 text-sm text-gray-600 bg-white border rounded-b-lg">
+                  <ul className="py-1 text-sm text-white bg-gradient-to-r from-red-300 via-red-300 to-red-400 border rounded-b-lg">
                     {dataDriver.map((val, index) => (
                       <li
                         key={index}
@@ -317,7 +326,7 @@ class Home extends Component {
             <div className="mt-8 w-full text-center">
               {buttonStop.status ? (
                 <div
-                  className={`border-green-500 bg-green-500 cursor-pointer  mt-8 border-2 text-white rounded-full w-16 h-16 mx-auto py-auto`}
+                  className={`border-red-500 bg-red-500 cursor-pointer  mt-8 border-2 text-white rounded-full w-16 h-16 mx-auto py-auto`}
                   onClick={() => {
                     this.stopTracking();
                   }}
@@ -330,8 +339,8 @@ class Home extends Component {
                     clickCar.id != null &&
                     clickDriver.id != null &&
                     clickPlat.plat.id != null
-                      ? "border-green-500 bg-green-500"
-                      : "border-gray-400 bg-gray-400"
+                      ? "border-red-500 bg-red-500"
+                      : "border-red-500 bg-red-500"
                   } cursor-pointer  mt-8 border-2 text-white rounded-full w-16 h-16 mx-auto py-auto`}
                   onClick={() => {
                     this.startTracking();
