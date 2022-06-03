@@ -25,9 +25,6 @@ class Tracking extends Component {
     console.log("DATATRACKING", dataTracking);
     return (
       <>
-        {/* {dataTracking.map((val, index) => {
-          
-        })} */}
         <div className="container mx-auto mt-40">
           <div className="text-2xl text-black font-semibold mb-4 ml-6">
             Tracking Page
