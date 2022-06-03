@@ -29,52 +29,52 @@ class Tracking extends Component {
           <div className="text-2xl text-black font-semibold mb-4 ml-6">
             Tracking Page
           </div>
-          <div class="flex flex-col">
-            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-              <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                <div class="overflow-hidden">
-                  <table class="min-w-full">
-                    <thead class="border-b">
+          <div className="flex flex-col">
+            <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                <div className="overflow-hidden">
+                  <table className="min-w-full">
+                    <thead className="border-b">
                       <tr>
                         <th
                           scope="col"
-                          class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
                           No
                         </th>
                         <th
                           scope="col"
-                          class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
                           Armada
                         </th>
                         <th
                           scope="col"
-                          class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
                           Driver
                         </th>
                         <th
                           scope="col"
-                          class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
                           Kendaraan
                         </th>
                         <th
                           scope="col"
-                          class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
                           Plat
                         </th>
                         <th
                           scope="col"
-                          class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
                           Start Time
                         </th>
                         <th
                           scope="col"
-                          class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
                           Finish
                         </th>
@@ -82,26 +82,26 @@ class Tracking extends Component {
                     </thead>
                     <tbody>
                       {dataTracking.map((val, index) => (
-                        <tr class="border-b">
-                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        <tr key={index} className="border-b">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                             {index + 1}
                           </td>
-                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                             {val.armada.nama_armada}
                           </td>
-                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                             {val.driver.name}
                           </td>
-                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                             {val.kendaraan.tipe}
                           </td>
-                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                             {val.plat.plat_name}
                           </td>
-                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                             {val.start_time}
                           </td>
-                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                             {val.finish_time != null
                               ? val.finish_time
                               : "Dalam Perjalanan"}
