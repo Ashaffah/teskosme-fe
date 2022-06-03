@@ -184,7 +184,6 @@ class Home extends Component {
       <div className=" mx-auto pt-24 py-4 md:py-8 text-center h-screen bg-gradient-to-br from-red-200 via-fuchsia-400 to-orange-600">
         {dataCar.length > 0 && dataDriver.length > 0 ? (
           <>
-            <div className="text-2xl font-bold mb-8 text-white">TES KOSME</div>
             <div className="w-8/12 md:w-4/12 text-left mb-2 mt-5 mx-auto font-semibold text-white z-30">
               Kendaraan
             </div>
@@ -354,7 +353,7 @@ class Home extends Component {
                     clickDriver.id != null &&
                     clickPlat.plat.id != null
                       ? "border-red-500 bg-red-500"
-                      : "border-red-500 bg-red-500"
+                      : "border-gray-500 bg-gray-500"
                   } cursor-pointer  mt-8 border-2 text-white rounded-full w-16 h-16 mx-auto py-auto`}
                   onClick={() => {
                     this.startTracking();
