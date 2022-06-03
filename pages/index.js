@@ -181,16 +181,18 @@ class Home extends Component {
 
     console.log("buttonStop", buttonStop);
     return (
-      <div className="container mx-auto mt-20 py-4 md:py-8 text-center bg-gradient-to-br from-red-300 via-red-300 to-red-400">
+      <div className=" mx-auto pt-24 py-4 md:py-8 text-center h-screen bg-gradient-to-br from-red-200 via-fuchsia-400 to-orange-600">
         {dataCar.length > 0 && dataDriver.length > 0 ? (
           <>
             <div className="text-2xl font-bold mb-8 text-white">TES KOSME</div>
+            <div className="w-8/12 md:w-4/12 text-left mb-2 mt-5 mx-auto font-semibold text-white z-30">
+              Kendaraan
+            </div>
             <div className="relative">
-              <div className="text-sm font-bold mb-1 mr-28 ml-4 text-white">
-                Kendaraan
-              </div>
               <div
-                className="rounded-lg cursor-pointer border w-44 justify-between text-white bg-gradient-to-r from-red-300 via-red-300 to-red-400 hover:bg-red-100 hover:border-red-200 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium text-sm px-4 py-2.5 text-center inline-flex items-center"
+                className={`${
+                  chevronCar ? "rounded-t-lg" : "rounded-lg"
+                } cursor-pointer border w-8/12 md:w-4/12 justify-between text-white  focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium text-sm px-4 py-2.5 text-center inline-flex items-center`}
                 onClick={() => {
                   if (dataCar.length > 0) {
                     this.setState({
@@ -210,10 +212,12 @@ class Home extends Component {
               </div>
               {chevronCar && (
                 <div
-                  className=" cursor-pointer z-10 w-44  divide-y divide-gray-100 shadow absolute top-full bottom-0 left-1/2"
+                  className={`${
+                    !chevronCar ? "hidden" : ""
+                  }cursor-pointer z-10 w-8/12 md:w-4/12  divide-y divide-gray-100 shadow absolute top-full bottom-0 left-1/2`}
                   style={{ transform: "translate(-50%, -50%)" }}
                 >
-                  <ul className="py-1 text-sm text-white bg-gradient-to-r from-red-300 via-red-300 to-red-400 border rounded-b-lg">
+                  <ul className="py-1 text-sm text-white backdrop-blur-xl bg-white/30 border rounded-b-lg">
                     {dataCar.map((val, index) => (
                       <li
                         key={index}
@@ -221,7 +225,7 @@ class Home extends Component {
                           this.selectCar(val);
                         }}
                       >
-                        <div className="block py-2 px-4 hover:bg-gray-100">
+                        <div className="block py-2 px-4 hover:bg-gray-100 hover:text-black">
                           {val.tipe}
                         </div>
                       </li>
@@ -230,12 +234,14 @@ class Home extends Component {
                 </div>
               )}
             </div>
-            <div className="relative my-4">
-              <div className="text-sm font-bold mb-1 mr-28 ml-4 text-white">
-                Plat Nomor
-              </div>
+            <div className=" w-8/12 md:w-4/12 text-left mb-2 mt-5 mx-auto font-semibold text-white">
+              Plat Nomor
+            </div>
+            <div className="relative mb-4">
               <div
-                className="rounded-lg cursor-pointer border w-44 justify-between text-white bg-gradient-to-r from-red-300 via-red-300 to-red-400 hover:bg-red-100 hover:border-red-200 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium text-sm px-4 py-2.5 text-center inline-flex items-center"
+                className={`${
+                  chevronPlat ? "rounded-t-lg" : "rounded-lg"
+                } cursor-pointer border w-8/12 md:w-4/12 justify-between text-white  focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium text-sm px-4 py-2.5 text-center inline-flex items-center`}
                 onClick={() => {
                   if (dataPlat.length > 0) {
                     this.setState({
@@ -250,15 +256,19 @@ class Home extends Component {
                   {clickPlat.plat.plat_name}
                 </div>
                 <div className="w-1/12">
-                  <FontAwesomeIcon icon={faChevronDown} />
+                  <FontAwesomeIcon
+                    icon={chevronPlat ? faChevronUp : faChevronDown}
+                  />
                 </div>
               </div>
               {chevronPlat && (
                 <div
-                  className=" cursor-pointer z-10 w-44  divide-y divide-gray-100 shadow absolute top-full bottom-0 left-1/2"
+                  className={`${
+                    !chevronPlat ? "hidden" : ""
+                  }cursor-pointer z-10 w-8/12 md:w-4/12  divide-y divide-gray-100 shadow absolute top-full bottom-0 left-1/2`}
                   style={{ transform: "translate(-50%, -50%)" }}
                 >
-                  <ul className="py-1 text-sm text-white bg-gradient-to-r from-red-300 via-red-300 to-red-400 border rounded-b-lg">
+                  <ul className="py-1 text-sm text-white backdrop-blur-xl bg-white/30 border rounded-b-lg">
                     {dataPlat.map((val, index) => (
                       <li
                         key={index}
@@ -266,7 +276,7 @@ class Home extends Component {
                           this.setState({ clickPlat: val, chevronPlat: false });
                         }}
                       >
-                        <div className="block py-2 px-4 hover:bg-gray-100">
+                        <div className="block py-2 px-4 hover:bg-gray-100 hover:text-black">
                           {val.plat.plat_name}
                         </div>
                       </li>
@@ -275,12 +285,14 @@ class Home extends Component {
                 </div>
               )}
             </div>
+            <div className="w-8/12 md:w-4/12 text-left mb-2 mt-5 mx-auto font-semibold text-white">
+              Driver
+            </div>
             <div className="relative">
-              <div className="text-sm font-bold mb-1 mr-28 text-white">
-                Driver
-              </div>
               <div
-                className="rounded-lg cursor-pointer border w-44 justify-between text-white bg-gradient-to-r from-red-300 via-red-300 to-red-400 hover:bg-red-100 hover:border-red-200 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium text-sm px-4 py-2.5 text-center inline-flex items-center"
+                className={`${
+                  chevronDriver ? "rounded-t-lg" : "rounded-lg"
+                } cursor-pointer border w-8/12 md:w-4/12 justify-between text-white  focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium text-sm px-4 py-2.5 text-center inline-flex items-center`}
                 onClick={() => {
                   if (dataDriver.length > 0) {
                     this.setState({
@@ -300,10 +312,12 @@ class Home extends Component {
               </div>
               {chevronDriver && (
                 <div
-                  className=" cursor-pointer z-10 w-44 divide-y divide-gray-100 shadow absolute  top-full bottom-0 left-1/2"
+                  className={`${
+                    !chevronDriver ? "hidden" : ""
+                  }cursor-pointer z-10 w-8/12 md:w-4/12  divide-y divide-gray-100 shadow absolute top-full bottom-0 left-1/2`}
                   style={{ transform: "translate(-50%, -50%)" }}
                 >
-                  <ul className="py-1 text-sm text-white bg-gradient-to-r from-red-300 via-red-300 to-red-400 border rounded-b-lg">
+                  <ul className="py-1 text-sm text-white backdrop-blur-xl bg-white/30 border rounded-b-lg">
                     {dataDriver.map((val, index) => (
                       <li
                         key={index}
@@ -314,7 +328,7 @@ class Home extends Component {
                           });
                         }}
                       >
-                        <div className="block py-2 px-4 hover:bg-gray-100">
+                        <div className="block py-2 px-4 hover:bg-gray-100 hover:text-black">
                           {val.name}
                         </div>
                       </li>
